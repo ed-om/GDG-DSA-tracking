@@ -1,0 +1,12 @@
+"""
+Problem: If n is even print n, but if n is odd print the least even multiple of n.
+Platform: LeetCode
+Language: Python3
+Difficulty: Easy
+"""
+class Solution:
+    def smallestEvenMultiple(self, n: int) -> int:
+        if n%2==0:
+            return n
+        else:
+            return 2*n
