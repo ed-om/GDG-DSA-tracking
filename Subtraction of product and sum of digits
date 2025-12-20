@@ -1,0 +1,20 @@
+"""
+Problem: Separate the digits of integer n and find the difference between the prodct and the sum of the digits
+Platform: LeetCode
+Language: Python3
+Difficulty: Easy
+"""
+class Solution:
+    def subtractProductAndSum(self, n: int) -> int:
+        if n == 0:
+            return 0
+        product = 1
+        total_sum = 0
+        n = abs(n)
+        while n > 0:
+            digit = n % 10
+            product *= digit
+            total_sum += digit
+            n //= 10
+        
+        return product - total_sum
