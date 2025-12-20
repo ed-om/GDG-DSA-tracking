@@ -1,0 +1,16 @@
+"""
+Problem: Adding digits of a number until the result becomes one digit
+Platform: LeetCode
+Language: Python3
+Difficulty: Easy
+"""
+class Solution:
+    def addDigits(self, num: int) -> int:
+        while num >= 10:
+            total_sum = 0
+            while num > 0:
+                digit = num % 10
+                total_sum += digit
+                num //= 10
+            num = total_sum
+        return num
