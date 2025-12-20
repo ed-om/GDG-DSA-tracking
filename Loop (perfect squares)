@@ -1,0 +1,10 @@
+"""
+Problem: Print square numbers upto n each on a new line
+Platform: HackerRank
+Language: Pypy3
+Difficulty: Easy
+"""
+if __name__ == '__main__':
+    n = int(input())
+    for i in range(n):
+        print(i**2)
