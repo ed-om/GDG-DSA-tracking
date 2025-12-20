@@ -1,0 +1,21 @@
+"""
+Problem: Write a function to find the longest common prefix string amongst an array of strings
+Platform: LeetCode
+Language: Python3
+Difficulty: Easy
+"""
+class Solution:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+        small = strs[0]
+        for word in strs:
+            if len(word) < len(small):
+                small = word
+
+        answer = ""
+        for  i in range (len(small)):
+            for word in strs:
+                if small[i] != word[i]:
+                    return answer
+            answer += small [i]
+
+        return small
