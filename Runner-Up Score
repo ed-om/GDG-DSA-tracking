@@ -1,0 +1,16 @@
+"""
+Problem: Find the runner-up (the second highest) score
+Platform: HackerRank
+Language: Pypy3
+Difficulty: Easy
+"""
+def main():
+    n = int(input())
+    arr = list(map(int, input().split()))
+    arr.sort()
+    largest=arr[-1]
+    i=n-2
+    while arr[i]==largest:
+        i-=1
+    print(arr[i])
+main()
