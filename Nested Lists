@@ -1,0 +1,17 @@
+"""
+Problem: Print the name(s) of students that have the second lowest score alphabetically
+Platform: HackerRank
+Language: Pypy3
+Difficulty: Easy
+"""
+if __name__ == '__main__':
+    students=[]
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        students.append([name, score])
+    ordered_scores = sorted(list(set([s[1] for s in students])))
+    second_lowest_score = ordered_scores[1]
+    result = sorted([s[0] for s in students if s[1]== second_lowest_score])
+    for name in result:
+        print(name)
