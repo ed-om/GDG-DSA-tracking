@@ -1,0 +1,26 @@
+"""
+Problem: apply different operations on a list
+Platform: HackerRank
+LanguageL Pypy3
+Difficulty: Easy
+Approach: I used the dictionary mapping method to clearly define each operation, and it seemed more organized (there are much shorter and easier approaches)
+"""
+if __name__ == '__main__':
+    List = []
+    N = int(input())
+    operations = {
+        'insert' : lambda x,y : List.insert(x,y),
+        'remove' : lambda x : List.remove(x),
+        'append' : lambda x : List.append(x),
+        'sort' : lambda : List.sort(),
+        'pop' : lambda : List.pop(),
+        'reverse' : lambda : List.reverse(),
+    }
+    for _ in range(N):
+        command = input().split()
+        op = command[0]
+        if op == 'print':
+            print(List)
+        else:
+            args = list(map(int, command[1:]))
+            operations[op](*args)
