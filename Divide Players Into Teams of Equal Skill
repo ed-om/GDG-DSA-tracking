@@ -1,0 +1,18 @@
+"""
+Problem: Divide the players into n / 2 teams of size 2 such that the total skill of each team is equal.
+Language: Python3
+Platform: Leetcode
+Difficulty: Medium
+"""
+class Solution:
+    def dividePlayers(self, skill: List[int]) -> int:
+        skill.sort()
+        n=len(skill)
+        target=skill[0]+skill[n-1]
+        totalchemistry=0
+        for i in range(n//2):
+            if skill[i]+skill[n-1-i]!=target:
+                return -1
+            else:
+                totalchemistry+=skill[i]*skill[n-1-i]
+        return totalchemistry
