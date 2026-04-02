@@ -1,0 +1,17 @@
+"""
+Problem: Find the subarray with the largest sum and return its sum.
+Language: Python3
+Platform: Leetcode
+Difficulty: Medium
+"""
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        maxsum=float('-inf')
+        minprefix= 0
+        prefixsum=0
+        for num in nums:
+            prefixsum+=num
+            maxsum=max(maxsum, prefixsum-minprefix)
+            minprefix=min(minprefix, prefixsum)
+        
+        return maxsum
