@@ -1,0 +1,17 @@
+"""
+Problem: Check if two strings s and t are the same after going under the backspace (#) operation
+Language: Python3
+Platform: Leetcode
+Difficulty: Easy
+"""
+class Solution:
+    def backspaceCompare(self, s: str, t: str) -> bool:
+        def buildstring(string: str)->str:
+            result=[]
+            for char in string:
+                if char!='#':
+                    result.append(char)
+                elif result:
+                    result.pop()
+            return ''.join(result)
+        return buildstring(s)==buildstring(t)
