@@ -1,0 +1,22 @@
+"""
+Problem: Find the minimum integer eating speed (bananas/hr) that allows Koko to eat all piles of bananas within h hours (she can only and must eat 1 pile/hr.
+Language: Python3
+Platform: Leetcode
+Difficulty: Medium
+"""
+class Solution:
+    def minEatingSpeed(self, piles: List[int], h: int) -> int:
+        def valid(m):
+            total=0
+            for i in piles:
+                total+=math.ceil(i/m)
+            return total<=h
+        low = 1
+        high = max(piles)
+        while low<=high:
+            mid=(low+high)//2
+            if valid(mid):
+                high=mid-1
+            else:
+                low=mid+1
+        return low
